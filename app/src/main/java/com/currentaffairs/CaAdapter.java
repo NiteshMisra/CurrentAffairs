@@ -37,6 +37,16 @@ public class CaAdapter extends RecyclerView.Adapter<CaAdapter.ViewHold> {
     @Override
     public void onBindViewHolder(@NonNull ViewHold holder, int position) {
         CaModel uploadCurrent = list.get(position);
+        switch (position%2){
+            case 0 : {
+                holder.layout.setBackgroundColor(Color.parseColor("#FCFCFC"));
+                break;
+            }
+            case 1 : {
+                holder.layout.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                break;
+            }
+        }
         holder.name.setText(uploadCurrent.getTitle());
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
